@@ -1,24 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Card View Controller-->
+        <scene sceneID="F24-se-QGA">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="7Ce-Lv-Fqb" customClass="CardViewController" customModule="DeckOfOneCardGP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1rw-5W-Fin">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fh-Hy-pZm">
+                                <rect key="frame" x="157" y="710" width="100" height="44"/>
+                                <color key="backgroundColor" red="0.62263384229999996" green="0.8082220282" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HAO-Fm-JeU"/>
+                                    <constraint firstAttribute="width" constant="100" id="ZZL-pJ-XeX"/>
+                                </constraints>
+                                <state key="normal" title="Draw One"/>
+                                <connections>
+                                    <action selector="drawButtonPressed:" destination="7Ce-Lv-Fqb" eventType="touchUpInside" id="lgD-9d-5Ru"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="49y-2i-eeN">
+                                <rect key="frame" x="94" y="296" width="226" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="cIY-Ux-Oh7"/>
+                                    <constraint firstAttribute="height" constant="314" id="nMz-fu-EDh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Fh-Hy-pZm" firstAttribute="centerX" secondItem="49y-2i-eeN" secondAttribute="centerX" id="0U4-SB-J18"/>
+                            <constraint firstItem="49y-2i-eeN" firstAttribute="centerY" secondItem="aR9-vQ-dYT" secondAttribute="centerY" id="CrG-hP-a8T"/>
+                            <constraint firstItem="0Fh-Hy-pZm" firstAttribute="top" secondItem="49y-2i-eeN" secondAttribute="bottom" constant="100" id="l41-zZ-WmP"/>
+                            <constraint firstItem="49y-2i-eeN" firstAttribute="centerX" secondItem="aR9-vQ-dYT" secondAttribute="centerX" id="wiU-EI-cbM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aR9-vQ-dYT"/>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="49y-2i-eeN" id="G9M-92-5W9"/>
+                        <outlet property="drawCardProperties" destination="0Fh-Hy-pZm" id="qJv-Jf-fNy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpt-BS-QC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="757" y="210"/>
         </scene>
     </scenes>
 </document>
